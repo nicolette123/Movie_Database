@@ -20,20 +20,11 @@ const Home = () => {
           {/* Left: Posters (static like Figma) */}
           <div className="flex gap-4">
             <img
-              src="/hero1.jpg"
+              src="images/banner.jpg"
               alt="movie poster"
-              className="w-1/3 h-80 object-cover rounded-lg shadow"
+              className="w-1/3 h-80 w-150 object-cover rounded-lg shadow"
             />
-            <img
-              src="/hero2.jpg"
-              alt="movie poster"
-              className="w-1/3 h-80 object-cover rounded-lg shadow"
-            />
-            <img
-              src="/hero3.jpg"
-              alt="movie poster"
-              className="w-1/3 h-80 object-cover rounded-lg shadow"
-            />
+           
           </div>
 
           {/* Right: Text + Search */}

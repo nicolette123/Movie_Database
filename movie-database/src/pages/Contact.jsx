@@ -1,7 +1,7 @@
 const Contact = () => {
   return (
     <main className="min-h-screen bg-gray-100">
-      <section className="bg-gradient-to-r from-black to-gray-900 text-white py-20">
+      <section className="bg-gradient-to-r from-blue to-gray-900 text-white py-20">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h1 className="text-4xl font-bold mb-4">
             Contact Us
@@ -50,7 +50,7 @@ const Contact = () => {
 
             <button
               type="submit"
-              className="bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition w-full"
+              className="bg-gray-800 text-white px-6 py-3 rounded-lg transition w-full"
             >
               Send Message
             </button>
