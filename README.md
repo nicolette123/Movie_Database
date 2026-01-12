@@ -1,175 +1,133 @@
-# Movie_Database
-🎬 Movie Finder App
+🎬 MOVIE DATABASE
 
-A modern and responsive React application that allows users to search for movies, explore detailed movie information, and enjoy a smooth UI powered by Tailwind CSS.
+MOVIE DATABASE is a modern, scalable React application for searching, discovering, and exploring movies using the OMDB API. The project follows a clean architecture with reusable components, custom hooks, service abstraction, and multiple pages, making it suitable for production-level development and portfolio presentation.
 
-🚀 Overview
+🚀 Features
 
-The Movie Finder App enables users to search for movies using a public movie API (OMDB API). It displays essential movie information, supports detailed views, handles errors gracefully, and adapts to all screen sizes with a responsive Tailwind CSS layout.
+🔍 Movie search with real-time results
 
-📌 Features
-🔍 1. Fetch Movie Data
+⭐ Top Rated movies (IMDb rating–based)
 
-Uses the OMDB API (or equivalent) to fetch movie data.
+📄 Dedicated movie details view
 
-Displays search results including:
+🧩 Reusable UI components
 
-🎞️ Movie Poster
+⚡ Custom data-fetching hook
 
-🎬 Title
+🧭 Client-side routing with React Router
 
-📅 Release Year
+📱 Fully responsive design
 
-📖 2. Movie Details View
+❗ Graceful error handling and loading states
 
-When a user clicks a movie card, the detailed page shows:
+🛠️ Tech Stack
 
-📝 Plot Summary
+React (Vite)
 
-🎭 Cast
+React Router DOM
 
-⭐ Ratings (IMDB, Rotten Tomatoes, etc.)
+Tailwind CSS / Custom CSS
 
-📂 Genre
+OMDB API
 
-🧪 3. Search Functionality
-
-Responsive search bar.
-
-Fetches relevant movies based on user input.
-
-Friendly "No results found" message for unmatched queries.
-
-📱 4. Responsive UI (Tailwind CSS)
-
-Fully responsive layout for:
-
-Desktop
-
-Tablet
-
-Mobile
-
-Clean and consistent design using Tailwind utility classes.
-
-⚠️ 5. Error Handling
-
-Handles API failures, invalid responses, or empty results.
-
-Displays helpful and clear error messages.
-
-🛠️ Technical Requirements
-⚙️ Project Setup
-
-React application (Vite recommended)
-
-Tailwind CSS configured for styling
-
-Environment variables for API key (.env)
-
-🌐 API Integration
-
-Uses fetch or axios to call the OMDB API.
-
-Handles async operations with loading and error states.
-
-🧩 Reusable Components
-
-SearchBar
-
-MovieCard
-
-MovieList
-
-MovieDetails
-
-Each component is structured for reusability and clean UI.
-
-🧠 State Management
-
-Uses React Hooks:
-
-useState
-
-useEffect
-
-Optional integration with Zustand or Redux as the app grows.
-
-☁️ Deployment
-
-Deployable on:
-
-Netlify
-
-Vercel
-
-
-✨ Stretch Goals
-⭐ Favorites List
-
-Save favorite movies to localStorage.
-
-📄 Pagination
-
-Handle large datasets by dividing results into pages.
-
-🔎 Sorting & Filtering
-
-Sort by:
-
-Release date
-
-Ratings
-
-Filter by:
-
-Genre
-
-Year
-
-🎥 Movie Trailers
-
-Embed YouTube trailers in the movie details page.
-
-🌙 Theme Customization
-
-Light/dark mode support.
-
-🌍 Internationalization
-
-Translate UI into multiple languages.
+JavaScript (ES6+)
 
 📂 Project Structure
 src/
- ├── components/
- │   ├── SearchBar.jsx
- │   ├── MovieCard.jsx
- │   ├── MovieList.jsx
- │   └── MovieDetails.jsx
- ├── pages/
- │   ├── Home.jsx
- │   └── Details.jsx
- ├── App.jsx
- ├── main.jsx
- └── index.css
+├── components/
+│   ├── ErrorMessage.jsx       # API & UI error handling
+│   ├── Footer.jsx             # Application footer
+│   ├── Loader.jsx             # Loading spinner
+│   ├── MovieCard.jsx          # Single movie card component
+│   ├── MovieDetails.jsx       # Movie details view
+│   ├── MovieList.jsx          # Movie grid/list wrapper
+│   ├── Navbar.jsx             # Main navigation
+│   ├── SearchBar.jsx          # Search input component
+│   └── TopRatedMovies.jsx     # Top rated movies display logic
+│
+├── hooks/
+│   └── useMovies.js            # Custom hook for fetching movies
+│
+├── pages/
+│   ├── About.jsx               # About page
+│   ├── Contact.jsx             # Contact page
+│   ├── Home.jsx                # Landing page
+│   ├── SearchPage.jsx          # Search results page
+│   └── TopRated.jsx            # Top rated movies page
+│
+├── services/
+│   └── omdbApi.js               # OMDB API service abstraction
+│
+├── utils/
+│   └── helpers.js               # Utility/helper functions
+│
+├── App.jsx                      # App routes & layout
+├── App.css
+├── index.css
+└── main.jsx                     # Application entry point
 
-📦 Installation & Setup
-# Clone the repository
-git clone https://github.com/YOUR-USERNAME/movie-finder.git
+⭐ Top Rated Movies Logic
 
-# Navigate into project folder
-cd movie-finder
+The OMDB API does not provide a native “Top Rated” endpoint.
+MOVIE DATABASE implements a curated IMDb rating strategy:
 
-# Install dependencies
+Fetch movies using popular keywords
+
+Retrieve full movie details per item
+
+Filter movies with imdbRating ≥ 8.0
+
+Display results using reusable components
+
+This approach ensures quality results while respecting API limitations.
+
+🔑 Environment Variables
+
+Create a .env file in the project root:
+
+VITE_OMDB_API_KEY=your_omdb_api_key_here
+
+▶️ Getting Started
+1. Clone the repository
+git clone https://github.com/nicolette123/movie-database.git
+cd movie-database
+
+2. Install dependencies
 npm install
 
-# Create .env and add your OMDB API key
-VITE_OMDB_API_KEY=your_api_key_here
-
-# Start development server
+3. Run the development server
 npm run dev
 
 
+Application runs at:
+
+http://localhost:5173
+
+🌐 Routes
+Route	Description
+/	Home page
+/search	Movie search results
+/top-rated	Top rated movies
+/about	About page
+/contact	Contact page
+
+📌 Future Enhancements
+
+Pagination & infinite scrolling
+
+Favorites / watchlist
+
+Local storage caching
+
+Improved accessibility (ARIA)
+
+Unit & integration tests
+
+📄 License
+
+This project is intended for educational and portfolio purposes.
+
 👩‍💻 Author
 
-Nicolette MUKESHIMANA
+Nicolette Mukeshimana
+Front-End Developer | React & UI Engineering
